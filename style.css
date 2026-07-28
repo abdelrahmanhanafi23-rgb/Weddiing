@@ -768,3 +768,81 @@ display:none;
 bottom:30px;
 
 }
+/* =========================================
+   إعدادات الموبايل (Mobile Responsiveness)
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* تصغير الخطوط العريضة */
+    .names, .overlay h1, .thanks h1 {
+        font-size: 45px !important;
+        line-height: 55px;
+    }
+    
+    .names span {
+        font-size: 35px;
+    }
+    
+    .overlay h2, .story h2, .rsvp h2 {
+        font-size: 35px;
+    }
+    
+    .counter h1, .gallery h2, .details h2, .map h2 {
+        font-size: 40px;
+    }
+
+    /* تقليل المسافات العلوية والجانبية للأقسام */
+    section {
+        padding: 60px 5%;
+    }
+    
+    .story, .gallery, .details, .map, .rsvp, .thanks {
+        padding: 60px 5%; /* أضفنا 5% هوامش لمنع التصاق الكلام بحافة الشاشة */
+    }
+
+    /* تعديل صناديق العداد (Countdown) */
+    .counter {
+        gap: 15px;
+        margin-top: 30px;
+    }
+    
+    .counter div {
+        width: 130px;
+        padding: 20px 10px;
+    }
+
+    /* تصغير زر الدخول */
+    #enterBtn {
+        padding: 15px 40px;
+        font-size: 18px;
+    }
+
+    /* تصغير ارتفاع الخريطة */
+    .map iframe {
+        height: 350px;
+    }
+}
+
+/* الشاشات الصغيرة جداً (مثل الهواتف القديمة) */
+@media (max-width: 480px) {
+    .names, .overlay h1, .thanks h1 {
+        font-size: 35px !important;
+        line-height: 45px;
+    }
+    
+    .names span {
+        font-size: 25px;
+    }
+    
+    .overlay h2 {
+        font-size: 28px;
+    }
+    
+    .counter div {
+        width: 100px; /* ليظهروا بجانب بعضهم براحة أكبر */
+    }
+    
+    .counter h1 {
+        font-size: 35px;
+    }
+}
