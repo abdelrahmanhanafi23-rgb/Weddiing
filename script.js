@@ -1,129 +1,115 @@
-const enter = document.getElementById("enterBtn");
-const loader = document.getElementById("loader");
-const website = document.getElementById("website");
-const music = document.getElementById("music");
+const enter=document.getElementById("enterBtn");
 
-enter.onclick = function () {
-loader.style.opacity = "0";
+const loader=document.getElementById("loader");
 
-```
-setTimeout(function () {
-    loader.style.display = "none";
-    website.style.display = "block";
-    music.play();
-}, 800);
-```
+const website=document.getElementById("website");
 
-};
+const music=document.getElementById("music");
 
-// Countdown
+enter.onclick=function(){
 
-var weddingDate = new Date("September 4, 2026 19:00:00").getTime();
+loader.style.opacity="0";
 
-setInterval(function () {
+setTimeout(function(){
 
-```
-var now = new Date().getTime();
-var distance = weddingDate - now;
+loader.style.display="none";
 
-var days = Math.floor(
-    distance / (1000 * 60 * 60 * 24)
-);
+website.style.display="block";
 
-var hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) /
-    (1000 * 60 * 60)
-);
+music.play();
 
-var minutes = Math.floor(
-    (distance % (1000 * 60 * 60)) /
-    (1000 * 60)
-);
+},800);
 
-var seconds = Math.floor(
-    (distance % (1000 * 60)) /
-    1000
-);
+}
 
-document.getElementById("days").innerHTML = days;
-document.getElementById("hours").innerHTML = hours;
-document.getElementById("minutes").innerHTML = minutes;
-document.getElementById("seconds").innerHTML = seconds;
-```
+var weddingDate = new Date("September 4, 2026 20:00:00").getTime();
 
-}, 1000);
+setInterval(function(){
+
+var now=new Date().getTime();
+
+var distance=weddingDate-now;
+
+var days=Math.floor(distance/(1000*60*60*24));
+
+var hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+var minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+
+var seconds=Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerHTML=days;
+
+document.getElementById("hours").innerHTML=hours;
+
+document.getElementById("minutes").innerHTML=minutes;
+
+document.getElementById("seconds").innerHTML=seconds;
+
+},1000);
+
+
 
 // Back To Top
 
-const topBtn = document.getElementById("topBtn");
+const topBtn=document.getElementById("topBtn");
 
-window.onscroll = function () {
+window.onscroll=function(){
 
-```
-if (document.documentElement.scrollTop > 500) {
-    topBtn.style.display = "block";
-} else {
-    topBtn.style.display = "none";
+if(document.documentElement.scrollTop>500){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
 }
-```
 
-};
+}
 
-topBtn.onclick = function () {
+topBtn.onclick=function(){
 
-```
 window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+
+top:0,
+
+behavior:"smooth"
+
 });
-```
 
-};
-
-// RSVP Form
-
+}
 const form = document.getElementById("rsvpForm");
 
 form.addEventListener("submit", function (e) {
 
-```
-e.preventDefault();
+    e.preventDefault();
 
-const data = new URLSearchParams();
+const data = {
+    name: document.getElementById("name").value,
+    guests: document.getElementById("guests").value,
+    attendance: document.getElementById("attendance").value,
+    message: document.getElementById("message").value
+};
 
-data.append(
-    "name",
-    document.getElementById("name").value
-);
+     fetch("https://script.google.com/macros/s/AKfycbzrYbTYJhZgmH-iBoHInzKojXRvj62QlXruw6z9t0xJfRcXVslaZeX5OFLhf18doJtfsw/exec", {
 
-data.append(
-    "guests",
-    document.getElementById("guests").value
-);
-
-data.append(
-    "attendance",
-    document.getElementById("attendance").value
-);
-
-data.append(
-    "message",
-    document.getElementById("message").value
-);
-
-fetch(
-    "https://script.google.com/macros/s/AKfycbzrYbTYJhZgmH-iBoHInzKojXRvj62QlXruw6z9t0xJfRcXVslaZeX5OFLhf18doJtfsw/exec",
-    {
         method: "POST",
-        body: data
-    }
-);
 
-alert(
-    "🎉 Thank you! Your attendance has been confirmed."
-);
+        mode: "no-cors",
 
-form.reset();
-```
+        headers: {
+
+            "Content-Type": "application/json"
+
+        },
+
+        body: JSON.stringify(data)
+
+    });
+
+    alert("🎉 Thank you! Your attendance has been confirmed.");
+
+    form.reset();
 
 });
