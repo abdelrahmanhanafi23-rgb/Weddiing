@@ -92,7 +92,7 @@ const data = {
     message: document.getElementById("message").value
 };
 
-     fetch("https://script.google.com/macros/s/AKfycbzrYbTYJhZgmH-iBoHInzKojXRvj62QlXruw6z9t0xJfRcXVslaZeX5OFLhf18doJtfsw/exec", {
+     fetch("https://script.google.com/macros/s/AKfycbwbaw3ROQfpl_icEXC6bycGJa-xvW4M3KVW1UOHYUJwHiHC2wObvOsn6Vj69kRC7V0LKw/exec", {
 
         method: "POST",
 
