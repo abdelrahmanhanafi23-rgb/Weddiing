@@ -868,3 +868,238 @@ bottom:30px;
     .counter { gap: 10px; }
     .counter div { width: 45%; padding: 15px; } /* لتوزيع العداد على عمودين */
 }
+
+/* ================================
+   FINAL MOBILE FIX
+================================ */
+
+html, body {
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+* {
+    max-width:100%;
+}
+
+
+/* الصور والفيديوهات */
+img,
+video,
+iframe {
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+
+/* Loader */
+#loader {
+    width:100%;
+    height:100dvh;
+    overflow:hidden;
+}
+
+
+/* Cover Section */
+header {
+    width:100%;
+    overflow:hidden;
+}
+
+
+.cover {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+
+/* النصوص الكبيرة */
+.names,
+.overlay h1,
+.thanks h1 {
+    word-break:break-word;
+}
+
+
+@media(max-width:768px){
+
+    /* General spacing */
+    section,
+    .story,
+    .gallery,
+    .details,
+    .map,
+    .rsvp,
+    .thanks {
+        padding-left:20px !important;
+        padding-right:20px !important;
+        width:100%;
+    }
+
+
+    /* Loader Text */
+    .small-title {
+        font-size:14px;
+        letter-spacing:2px;
+    }
+
+
+    .names {
+        font-size:38px !important;
+        line-height:45px !important;
+    }
+
+
+    .names span {
+        font-size:28px !important;
+    }
+
+
+    .date {
+        font-size:18px;
+    }
+
+
+    .invite {
+        font-size:16px;
+    }
+
+
+    #enterBtn {
+        padding:14px 35px;
+        font-size:17px;
+    }
+
+
+
+    /* Header Text */
+    .overlay {
+        width:90%;
+    }
+
+
+    .overlay h1 {
+        font-size:40px !important;
+        line-height:45px;
+    }
+
+
+    .overlay h2 {
+        font-size:28px !important;
+    }
+
+
+    .overlay p {
+        font-size:16px;
+    }
+
+
+
+    /* Story */
+    .story h2,
+    .gallery h2,
+    .details h2,
+    .map h2,
+    .rsvp h2 {
+        font-size:38px !important;
+        line-height:45px;
+    }
+
+
+    .story p {
+        font-size:17px;
+        line-height:30px;
+    }
+
+
+
+    /* Countdown */
+    .counter {
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+    }
+
+
+    .counter div {
+        width:100%;
+        padding:20px 10px;
+    }
+
+
+    .counter h1 {
+        font-size:35px;
+    }
+
+
+    .counter p {
+        font-size:16px;
+    }
+
+
+
+    /* Cards */
+    .card-box {
+        padding:25px 15px;
+    }
+
+
+
+    /* Map */
+    .map iframe {
+        width:100%;
+        height:300px;
+    }
+
+
+
+    /* Floating Hearts */
+    .floating-hearts span {
+        font-size:20px;
+    }
+
+
+
+    /* Buttons */
+    #topBtn,
+    #musicBtn {
+        width:45px;
+        height:45px;
+        right:15px;
+        font-size:18px;
+    }
+
+}
+
+
+
+@media(max-width:480px){
+
+    .names {
+        font-size:32px !important;
+    }
+
+
+    .overlay h1 {
+        font-size:32px !important;
+    }
+
+
+    .counter {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+
+    .counter h1 {
+        font-size:28px;
+    }
+
+
+    .gallery img {
+        margin-bottom:15px;
+    }
+
+}
