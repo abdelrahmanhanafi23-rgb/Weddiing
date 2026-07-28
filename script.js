@@ -4,21 +4,13 @@ const website = document.getElementById("website");
 const music = document.getElementById("music");
 
 enter.onclick = function () {
-
-```
 loader.style.opacity = "0";
 
+```
 setTimeout(function () {
-
     loader.style.display = "none";
     website.style.display = "block";
-
-    if (music) {
-        music.play().catch(function (error) {
-            console.log("Music playback error:", error);
-        });
-    }
-
+    music.play();
 }, 800);
 ```
 
@@ -32,7 +24,6 @@ setInterval(function () {
 
 ```
 var now = new Date().getTime();
-
 var distance = weddingDate - now;
 
 var days = Math.floor(
@@ -120,34 +111,19 @@ data.append(
     document.getElementById("message").value
 );
 
-
 fetch(
     "https://script.google.com/macros/s/AKfycbzrYbTYJhZgmH-iBoHInzKojXRvj62QlXruw6z9t0xJfRcXVslaZeX5OFLhf18doJtfsw/exec",
     {
         method: "POST",
         body: data
     }
-)
+);
 
-.then(function () {
+alert(
+    "🎉 Thank you! Your attendance has been confirmed."
+);
 
-    alert(
-        "🎉 Thank you! Your attendance has been confirmed."
-    );
-
-    form.reset();
-
-})
-
-.catch(function (error) {
-
-    console.error("Error:", error);
-
-    alert(
-        "❌ Something went wrong. Please try again."
-    );
-
-});
+form.reset();
 ```
 
 });
