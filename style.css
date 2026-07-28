@@ -775,158 +775,51 @@ display:none;
 bottom:30px;
 
 }
-/* =========================================
-   إعدادات الموبايل (Mobile Responsiveness)
-   ========================================= */
-
-@media (max-width: 768px) {
-    /* تصغير الخطوط العريضة */
-    .names, .overlay h1, .thanks h1 {
-        font-size: 45px !important;
-        line-height: 55px;
-    }
-    
-    .names span {
-        font-size: 35px;
-    }
-    
-    .overlay h2, .story h2, .rsvp h2 {
-        font-size: 35px;
-    }
-    
-    .counter h1, .gallery h2, .details h2, .map h2 {
-        font-size: 40px;
-    }
-
-    /* تقليل المسافات العلوية والجانبية للأقسام */
-    section {
-        padding: 60px 5%;
-    }
-    
-    .story, .gallery, .details, .map, .rsvp, .thanks {
-        padding: 60px 5%; /* أضفنا 5% هوامش لمنع التصاق الكلام بحافة الشاشة */
-    }
-
-    /* تعديل صناديق العداد (Countdown) */
-    .counter {
-        gap: 15px;
-        margin-top: 30px;
-    }
-    
-    .counter div {
-        width: 130px;
-        padding: 20px 10px;
-    }
-
-    /* تصغير زر الدخول */
-    #enterBtn {
-        padding: 15px 40px;
-        font-size: 18px;
-    }
-
-    /* تصغير ارتفاع الخريطة */
-    .map iframe {
-        height: 350px;
-    }
-}
-
-/* الشاشات الصغيرة جداً (مثل الهواتف القديمة) */
-@media (max-width: 480px) {
-    .names, .overlay h1, .thanks h1 {
-        font-size: 35px !important;
-        line-height: 45px;
-    }
-    
-    .names span {
-        font-size: 25px;
-    }
-    
-    .overlay h2 {
-        font-size: 28px;
-    }
-    
-    .counter div {
-        width: 100px; /* ليظهروا بجانب بعضهم براحة أكبر */
-    }
-    
-    .counter h1 {
-        font-size: 35px;
-    }
-}
-@media (max-width: 768px) {
-    /* تصغير الخطوط العريضة */
-    .names, .overlay h1, .thanks h1 { font-size: 40px !important; }
-    .names span { font-size: 30px; }
-    .overlay h2, .story h2, .rsvp h2 { font-size: 32px; }
-    .counter h1, .gallery h2, .details h2, .map h2 { font-size: 35px; }
-
-    /* تقليل المسافات العلوية والجانبية */
-    section { padding: 60px 5%; }
-    .story, .gallery, .details, .map, .rsvp, .thanks { padding: 60px 5%; }
-
-    /* تعديل صناديق العداد (Countdown) لتتناسب مع الموبايل */
-    .counter { gap: 10px; }
-    .counter div { width: 45%; padding: 15px; } /* لتوزيع العداد على عمودين */
-}
-
-/* ================================
-   FINAL MOBILE FIX
-================================ */
-
-html, body {
-    width:100%;
-    max-width:100%;
-    overflow-x:hidden;
-}
+/* =================================
+   MOBILE RESPONSIVE DESIGN
+================================= */
 
 * {
-    max-width:100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+html,
+body {
+    width: 100%;
+    min-width: 100%;
+    overflow-x: hidden;
+}
 
-/* الصور والفيديوهات */
+body {
+    background: #111;
+}
+
+/* كل العناصر الرئيسية */
+#loader,
+#website,
+header,
+section,
+footer {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* الصور */
 img,
 video,
 iframe {
-    max-width:100%;
-    height:auto;
-    display:block;
+    max-width: 100%;
 }
 
+/* =================================
+   MOBILE
+================================= */
 
-/* Loader */
-#loader {
-    width:100%;
-    height:100dvh;
-    overflow:hidden;
-}
+@media screen and (max-width: 768px) {
 
-
-/* Cover Section */
-header {
-    width:100%;
-    overflow:hidden;
-}
-
-
-.cover {
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-
-/* النصوص الكبيرة */
-.names,
-.overlay h1,
-.thanks h1 {
-    word-break:break-word;
-}
-
-
-@media(max-width:768px){
-
-    /* General spacing */
+    /* جميع الأقسام */
     section,
     .story,
     .gallery,
@@ -934,172 +827,309 @@ header {
     .map,
     .rsvp,
     .thanks {
-        padding-left:20px !important;
-        padding-right:20px !important;
-        width:100%;
+        width: 100%;
+        padding: 60px 20px;
     }
 
+    /* =========================
+       LOADER
+    ========================= */
 
-    /* Loader Text */
+    #loader {
+        width: 100%;
+        height: 100dvh;
+        background-position: center;
+    }
+
+    .loader-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
     .small-title {
-        font-size:14px;
-        letter-spacing:2px;
+        font-size: 13px;
+        letter-spacing: 2px;
     }
-
 
     .names {
-        font-size:38px !important;
-        line-height:45px !important;
+        font-size: 42px !important;
+        line-height: 1.2;
     }
-
 
     .names span {
-        font-size:28px !important;
+        font-size: 30px !important;
+        margin: 5px 0;
     }
-
 
     .date {
-        font-size:18px;
+        font-size: 18px;
+        margin-top: 15px;
     }
-
 
     .invite {
-        font-size:16px;
+        font-size: 15px;
     }
-
 
     #enterBtn {
-        padding:14px 35px;
-        font-size:17px;
+        padding: 14px 35px;
+        font-size: 17px;
+        margin-top: 30px;
     }
 
 
+    /* =========================
+       HEADER
+    ========================= */
 
-    /* Header Text */
+    header {
+        width: 100%;
+        height: 100dvh;
+        position: relative;
+    }
+
+    .cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
     .overlay {
-        width:90%;
+        width: 90%;
+        max-width: 500px;
     }
-
 
     .overlay h1 {
-        font-size:40px !important;
-        line-height:45px;
+        font-size: 42px !important;
+        line-height: 1.2;
     }
-
 
     .overlay h2 {
-        font-size:28px !important;
+        font-size: 28px !important;
+        margin: 15px 0;
     }
-
 
     .overlay p {
-        font-size:16px;
+        font-size: 16px;
     }
 
 
+    /* =========================
+       STORY
+    ========================= */
 
-    /* Story */
+    .story {
+        width: 100%;
+        text-align: center;
+    }
+
+    .story h2 {
+        font-size: 40px !important;
+        line-height: 1.2;
+    }
+
+    .story p {
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .story-img {
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* =========================
+       COUNTDOWN
+    ========================= */
+
+    #countdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .counter {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .counter div {
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    .counter h1 {
+        font-size: 35px;
+    }
+
+    .counter p {
+        font-size: 15px;
+    }
+
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    .gallery {
+        width: 100%;
+    }
+
+    .gallery h2 {
+        font-size: 40px !important;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       DETAILS
+    ========================= */
+
+    .details {
+        width: 100%;
+    }
+
+    .details h2 {
+        font-size: 40px !important;
+    }
+
+    .card-box {
+        width: 100%;
+        padding: 25px 15px;
+    }
+
+
+    /* =========================
+       MAP
+    ========================= */
+
+    .map {
+        width: 100%;
+    }
+
+    .map h2 {
+        font-size: 40px !important;
+    }
+
+    .map-box {
+        width: 100%;
+    }
+
+    .map iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+
+    /* =========================
+       RSVP
+    ========================= */
+
+    .rsvp {
+        width: 100%;
+    }
+
+    .rsvp h2 {
+        font-size: 40px !important;
+    }
+
+
+    /* =========================
+       THANK YOU
+    ========================= */
+
+    .thanks {
+        width: 100%;
+        padding: 80px 20px;
+    }
+
+    .thanks h1 {
+        font-size: 45px !important;
+        line-height: 1.2;
+    }
+
+    .thanks p {
+        font-size: 18px;
+    }
+
+
+    /* =========================
+       FLOATING BUTTONS
+    ========================= */
+
+    #topBtn,
+    #musicBtn {
+        width: 48px;
+        height: 48px;
+        right: 15px;
+        font-size: 18px;
+    }
+
+    #topBtn {
+        bottom: 85px;
+    }
+
+    #musicBtn {
+        bottom: 25px;
+    }
+}
+
+
+/* =================================
+   SMALL PHONES
+================================= */
+
+@media screen and (max-width: 480px) {
+
+    .names {
+        font-size: 36px !important;
+    }
+
+    .names span {
+        font-size: 26px !important;
+    }
+
+    .overlay h1 {
+        font-size: 36px !important;
+    }
+
+    .overlay h2 {
+        font-size: 25px !important;
+    }
+
     .story h2,
     .gallery h2,
     .details h2,
     .map h2,
     .rsvp h2 {
-        font-size:38px !important;
-        line-height:45px;
+        font-size: 34px !important;
     }
 
-
-    .story p {
-        font-size:17px;
-        line-height:30px;
-    }
-
-
-
-    /* Countdown */
     .counter {
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-        gap:15px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
-
 
     .counter div {
-        width:100%;
-        padding:20px 10px;
+        padding: 15px 5px;
     }
-
 
     .counter h1 {
-        font-size:35px;
+        font-size: 28px;
     }
-
 
     .counter p {
-        font-size:16px;
+        font-size: 13px;
     }
-
-
-
-    /* Cards */
-    .card-box {
-        padding:25px 15px;
-    }
-
-
-
-    /* Map */
-    .map iframe {
-        width:100%;
-        height:300px;
-    }
-
-
-
-    /* Floating Hearts */
-    .floating-hearts span {
-        font-size:20px;
-    }
-
-
-
-    /* Buttons */
-    #topBtn,
-    #musicBtn {
-        width:45px;
-        height:45px;
-        right:15px;
-        font-size:18px;
-    }
-
-}
-
-
-
-@media(max-width:480px){
-
-    .names {
-        font-size:32px !important;
-    }
-
-
-    .overlay h1 {
-        font-size:32px !important;
-    }
-
-
-    .counter {
-        grid-template-columns:repeat(2,1fr);
-    }
-
-
-    .counter h1 {
-        font-size:28px;
-    }
-
-
-    .gallery img {
-        margin-bottom:15px;
-    }
-
 }
