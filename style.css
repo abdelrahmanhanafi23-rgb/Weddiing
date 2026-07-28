@@ -817,3 +817,97 @@ textarea{
 }
 
 }
+/* ===========================
+   Loader Mobile
+=========================== */
+
+#loader{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+    padding:20px;
+}
+
+.loader-content{
+    width:100%;
+    max-width:700px;
+    z-index:2;
+}
+
+.names{
+    font-size:80px;
+    line-height:1.1;
+    margin:20px 0;
+}
+
+.names span{
+    display:block;
+    font-size:45px;
+    margin:15px 0;
+}
+
+.small-title{
+    font-size:20px;
+    letter-spacing:2px;
+}
+
+.date{
+    font-size:24px;
+    margin-top:15px;
+}
+
+.invite{
+    font-size:22px;
+    margin:25px auto;
+    max-width:700px;
+}
+
+#enterBtn{
+    padding:18px 45px;
+    font-size:22px;
+    border-radius:50px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#enterBtn:hover{
+    transform:scale(1.05);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.names{
+    font-size:48px;
+}
+
+.names span{
+    font-size:28px;
+}
+
+.small-title{
+    font-size:15px;
+}
+
+.date{
+    font-size:18px;
+}
+
+.invite{
+    font-size:16px;
+    line-height:28px;
+}
+
+#enterBtn{
+    width:100%;
+    max-width:320px;
+    font-size:18px;
+    padding:15px;
+}
+
+}
