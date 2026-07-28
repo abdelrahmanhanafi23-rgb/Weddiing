@@ -78,37 +78,34 @@ behavior:"smooth"
 
 });
 
-}
-const form = document.getElementById("rsvpForm");
+}const form = document.getElementById("rsvpForm");
 
 form.addEventListener("submit", function (e) {
+e.preventDefault();
 
-    e.preventDefault();
+```
+const data = new URLSearchParams();
 
-const data = {
-    name: document.getElementById("name").value,
-    guests: document.getElementById("guests").value,
-    attendance: document.getElementById("attendance").value,
-    message: document.getElementById("message").value
-};
+data.append("name", document.getElementById("name").value);
+data.append("guests", document.getElementById("guests").value);
+data.append("attendance", document.getElementById("attendance").value);
+data.append("message", document.getElementById("message").value);
 
-     fetch("https://script.google.com/macros/s/AKfycbzrYbTYJhZgmH-iBoHInzKojXRvj62QlXruw6z9t0xJfRcXVslaZeX5OFLhf18doJtfsw/exec", {
-
-        method: "POST",
-
-        mode: "no-cors",
-
-        headers: {
-
-            "Content-Type": "application/json"
-
-        },
-
-        body: JSON.stringify(data)
-
-    });
-
+fetch("https://script.google.com/macros/s/AKfycbzrYbTYJhZgmH-iBoHInzKojXRvj62QlXruw6z9t0xJfRcXVslaZeX5OFLhf18doJtfsw/exec", {
+    method: "POST",
+    body: data
+})
+.then(() => {
     alert("🎉 Thank you! Your attendance has been confirmed.");
+    form.reset();
+})
+.catch((error) => {
+    console.error("Error:", error);
+    alert("❌ Something went wrong. Please try again.");
+});
+```
+
+});
 
     form.reset();
 
