@@ -22,7 +22,7 @@ music.play();
 
 }
 
-var weddingDate = new Date("September 4, 2026 20:00:00").getTime();
+var weddingDate = new Date("September 4, 2026 19:00:00").getTime();
 
 setInterval(function(){
 
