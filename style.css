@@ -22,6 +22,10 @@ color:white;
 overflow-x:hidden;
 
 }
+img, iframe, video {
+    max-width: 100%;
+    height: auto;
+}
 
 /* Welcome Screen */
 
@@ -848,4 +852,19 @@ bottom:30px;
     .counter h1 {
         font-size: 35px;
     }
+}
+@media (max-width: 768px) {
+    /* تصغير الخطوط العريضة */
+    .names, .overlay h1, .thanks h1 { font-size: 40px !important; }
+    .names span { font-size: 30px; }
+    .overlay h2, .story h2, .rsvp h2 { font-size: 32px; }
+    .counter h1, .gallery h2, .details h2, .map h2 { font-size: 35px; }
+
+    /* تقليل المسافات العلوية والجانبية */
+    section { padding: 60px 5%; }
+    .story, .gallery, .details, .map, .rsvp, .thanks { padding: 60px 5%; }
+
+    /* تعديل صناديق العداد (Countdown) لتتناسب مع الموبايل */
+    .counter { gap: 10px; }
+    .counter div { width: 45%; padding: 15px; } /* لتوزيع العداد على عمودين */
 }
