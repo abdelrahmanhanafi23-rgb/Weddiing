@@ -1,0 +1,115 @@
+const enter=document.getElementById("enterBtn");
+
+const loader=document.getElementById("loader");
+
+const website=document.getElementById("website");
+
+const music=document.getElementById("music");
+
+enter.onclick=function(){
+
+loader.style.opacity="0";
+
+setTimeout(function(){
+
+loader.style.display="none";
+
+website.style.display="block";
+
+music.play();
+
+},800);
+
+}
+
+var weddingDate = new Date("September 4, 2026 20:00:00").getTime();
+
+setInterval(function(){
+
+var now=new Date().getTime();
+
+var distance=weddingDate-now;
+
+var days=Math.floor(distance/(1000*60*60*24));
+
+var hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+var minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+
+var seconds=Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerHTML=days;
+
+document.getElementById("hours").innerHTML=hours;
+
+document.getElementById("minutes").innerHTML=minutes;
+
+document.getElementById("seconds").innerHTML=seconds;
+
+},1000);
+
+
+
+// Back To Top
+
+const topBtn=document.getElementById("topBtn");
+
+window.onscroll=function(){
+
+if(document.documentElement.scrollTop>500){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+}
+
+topBtn.onclick=function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+const form = document.getElementById("rsvpForm");
+
+form.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+const data = {
+    name: document.getElementById("name").value,
+    guests: document.getElementById("guests").value,
+    attendance: document.getElementById("attendance").value,
+    message: document.getElementById("message").value
+};
+
+     fetch("https://script.google.com/macros/s/AKfycbzrYbTYJhZgmH-iBoHInzKojXRvj62QlXruw6z9t0xJfRcXVslaZeX5OFLhf18doJtfsw/exec", {
+
+        method: "POST",
+
+        mode: "no-cors",
+
+        headers: {
+
+            "Content-Type": "application/json"
+
+        },
+
+        body: JSON.stringify(data)
+
+    });
+
+    alert("🎉 Thank you! Your attendance has been confirmed.");
+
+    form.reset();
+
+});
